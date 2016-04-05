@@ -70,13 +70,11 @@
 
 <?php if ( $show_content ) : ?>
 
-	<div class="fplearndash-content">
-	<?php echo $content; ?>
-	</div>
+
 <?php  if ( is_user_logged_in() || get_the_lessontopic($post->ID,854)==1 ) { ?>
 
 <?php if ( ! empty( $topics ) ) : ?>
-		<div id="learndash_lesson_topics_list">
+			<div id="learndash_lesson_topics_list" style="float:left">
             <div id='learndash_topic_dots-<?php echo esc_attr( $post->ID ); ?>' class="learndash_topic_dots type-list">
                 <strong><?php _e( 'Knowledge Topics', 'learndash'); ?></strong>
                 <ul>
@@ -106,6 +104,9 @@
 <?php endif; ?>	
 
 	
+		<div class="fplearndash-content" style="float:right">
+			<?php echo $content; ?>
+		</div>
 
 
 	<?php 

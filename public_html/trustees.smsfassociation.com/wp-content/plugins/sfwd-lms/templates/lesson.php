@@ -35,14 +35,14 @@
 <style type="text/css">
 
 #learndash_lesson_topics_list{
-	float: right; 
+	float: left;
 	width: 29%;
 	margin-top: -47px;
 }
 
 .fplearndash-content{
 	
-	float: left; 
+	float: right;
 	width: 65%;
 	
 }
@@ -69,9 +69,7 @@
 <?php endif; ?>
 
 <?php if ( $show_content ) : ?>
-	<div class="fplearndash-content">
-	<?php echo $content; ?>
-	</div>	
+	
 
 	<?php
     /**
@@ -104,6 +102,12 @@
             </div>
 		</div>
 	<?php endif; ?>
+
+	<div class="fplearndash-content">
+	<?php echo $content; ?>
+	</div>	
+
+	
 	<?php
 	
 	
