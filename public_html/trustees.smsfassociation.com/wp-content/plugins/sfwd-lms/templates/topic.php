@@ -200,20 +200,45 @@
 				$quizids="";
 				$swtopicinfo = get_post_meta($post->ID,'_sfwd-topic', true);
 				$quizlist = get_posts('post_type=sfwd-quiz');
+
+
+				// print_r($quizlist);
+
+
 				foreach($quizlist as $quizindex=>$quizdata) {
+
+					// echo "<pre>";
+					// print_r($quizlesson);
+					// echo "</pre>";
+ 
 					$quizlesson = get_post_meta($quizdata->ID,'_sfwd-quiz', true);
-					if($quizlesson['sfwd-quiz_lesson']==$swtopicinfo['sfwd-topic_lesson']){
+
+					// echo  $quizlesson['sfwd-quiz_lesson'] . "  == " . $swtopicinfo['sfwd-topic_lesson'] . '<br><br><br>';
+
+					if($quizlesson['sfwd-quiz_lesson']==$swtopicinfo['sfwd-topic_lesson']) {
 						$quizids[]=$quizdata->ID;
 					}
+					
 				}
 				$quizzes="";
+
+				// echo "<pre>";
+				// 	echo "Below are the list of the quiz <br><br>";
+			 //  		print_r($quizids); 
+			 //  	echo "</pre>";
+
 				foreach($quizids as $quizid) {
+
+				// echo " quizid = $quizid <br>";
+
 				$quizzes = get_post( $quizid );
 				?>
+
+
 				<?php if ( ! empty( $quizzes ) ) : ?>
 					<div class="clear"></div>
 					<div id="learndash_quizzes" style="">
-						<div id="quiz_heading"><span><?php _e( 'Test your knowledge', 'learndash' ); ?></span></div>
+						<div id="quiz_heading"><span><?php _e( 'Knowledge Test', 'learndash' ); ?></span></div>
 						<div id="quiz_list">
 							<div id='post-<?php echo esc_attr( $quizzes->post_id ); ?>'>
 								<h4>
