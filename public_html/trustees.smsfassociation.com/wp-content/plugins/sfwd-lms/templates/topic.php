@@ -143,7 +143,7 @@
 			<?php if ( ! empty( $quizzes ) ) : ?>
 				<div class="clear"></div>
 				<div id="learndash_quizzes" style="float: right;">
-					<div id="quiz_heading"><span><?php _e( 'Test your knowledge', 'learndash' ); ?></span></div>
+					<div id="quiz_heading"><span><?php _e( 'Knowledge Test', 'learndash' ); ?></span></div>
 					<div id="quiz_list">
 						<div id='post-<?php echo esc_attr( $quizzes->post_id ); ?>'>				
 							<h4>
@@ -200,3 +200,4 @@
 <?php endif; ?>
 <div style="clear:both;"></div>
 <!--<p id="learndash_next_prev_link"><?php echo learndash_previous_post_link(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo learndash_next_post_link(); ?></p>-->
+ 
